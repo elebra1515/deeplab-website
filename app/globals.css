@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F5F1;
+  color: #16202A;
+}
+
+/* Signature element: a graduated measurement scale, echoing the
+   hydrometer/graduated-cylinder markings this company supplies.
+   Used as a recurring divider and decorative rail throughout the site. */
+.scale-rail {
+  position: relative;
+  width: 100%;
+  height: 28px;
+}
+
+.scale-rail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    currentColor 0,
+    currentColor 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  opacity: 0.35;
+}
+
+.scale-rail-vertical {
+  position: relative;
+  width: 28px;
+  height: 100%;
+  min-height: 200px;
+}
+
+.scale-rail-vertical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    currentColor 0,
+    currentColor 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  opacity: 0.4;
+}
+
+.tick-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid #E8A33D;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
