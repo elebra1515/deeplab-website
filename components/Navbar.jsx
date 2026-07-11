@@ -18,7 +18,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center gap-3" aria-label="Deep Integrated Lab Services Limited home">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Deep Integrated Lab Services Limited"
             width={280}
             height={80}
