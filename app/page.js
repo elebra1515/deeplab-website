@@ -120,7 +120,7 @@ export default function HomePage() {
         <h2 style={{color: '#f59e0b'}}>Ready to Optimize Your Operations?</h2>
         <p>Contact us today for laboratory solutions, chemical supply, and process optimization.</p>
         <a 
-          href="https://wa.me/2348031234567?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited%2C%20I%20want%20to%20make%20an%20enquiry" 
+          href="https://wa.me/2348031234567 2349050982572?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited%2C%20I%20want%20to%20make%20an%20enquiry" 
           target="_blank"
           style={{background: '#25D366', color: 'white', padding: '15px 30px', textDecoration: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '18px', display: 'inline-block', marginTop: '10px'}}
         >
@@ -130,7 +130,7 @@ export default function HomePage() {
 
       {/* FLOATING WHATSAPP */}
       <a 
-        href="https://wa.me/2348031234567?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited"
+        href="https://wa.me/234806861306?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited"
         target="_blank"
         style={{
           position: 'fixed',
