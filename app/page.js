@@ -26,8 +26,7 @@ export default function Home() {
     {
       id: 'production',
       title: 'Oil & Gas Production Support',
-      img: 'https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg',
-              ^,
+      img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200', 
       desc: 'On-site technical support, production optimization, and field laboratory services for upstream and downstream oil & gas operations.'
     },
     {
