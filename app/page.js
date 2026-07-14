@@ -41,11 +41,11 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section style={{marginBottom: '40px'}}>
+      <section id="services" style={{marginBottom: '40px'}}>
         <h2 style={{color: '#f59e0b', borderBottom: '1px solid #334155', paddingBottom: '10px'}}>3. Core Technical Services</h2>
         <p>Deep Integrated Lab Services Limited delivers its expertise through six distinct, yet highly integrated service pillars:</p>
         
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="lab-tech" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>1. Laboratory Technical Services</h3>
           <p>We provide foundational technical support, management, and engineering to establish and maintain world-class testing environments.</p>
           <ul>
@@ -55,7 +55,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="analytical" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>2. Analytical Lab Services</h3>
           <p>Delivering the high-precision baseline data required for custody transfer, asset valuation, and day-to-day operations.</p>
           <ul>
@@ -65,7 +65,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="environmental" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>3. Environmental Services</h3>
           <p>Helping operators manage their ecological footprint and maintain complete compliance with local and international regulatory frameworks.</p>
           <ul>
@@ -75,7 +75,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="chemical-supply" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>4. Chemical Supply</h3>
           <p>A highly reliable, end-to-end supply chain delivering high-performance, industry-certified specialty chemicals.</p>
           <ul>
@@ -85,7 +85,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="production-chem" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>5. Production Chemistry</h3>
           <p>Deep analytical evaluation of reservoir fluids to diagnose, predict, and mitigate organic and inorganic deposition challenges.</p>
           <ul>
@@ -95,7 +95,7 @@ export default function HomePage() {
           </ul>
         </div>
 
-        <div style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
+        <div id="injection" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
           <h3 style={{color: '#f59e0b'}}>6. Chemical Injection & Optimization</h3>
           <p>Transforming laboratory analysis into fieldwork by designing, auditing, and adjusting chemical delivery systems to maximize efficiency and minimize cost.</p>
           <ul>
@@ -116,11 +116,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section style={{textAlign: 'center', marginTop: '50px', padding: '30px', background: '#111827', borderRadius: '10px'}}>
+      <section id="contact" style={{textAlign: 'center', marginTop: '50px', padding: '30px', background: '#111827', borderRadius: '10px'}}>
         <h2 style={{color: '#f59e0b'}}>Ready to Optimize Your Operations?</h2>
         <p>Contact us today for laboratory solutions, chemical supply, and process optimization.</p>
         <a 
-          href="https://wa.me/2348031234567 2349050982572?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited%2C%20I%20want%20to%20make%20an%20enquiry" 
+          href="https://wa.me/2348068613046?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited%2C%20I%20want%20to%20make%20an%20enquiry" 
           target="_blank"
           style={{background: '#25D366', color: 'white', padding: '15px 30px', textDecoration: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '18px', display: 'inline-block', marginTop: '10px'}}
         >
@@ -130,7 +130,7 @@ export default function HomePage() {
 
       {/* FLOATING WHATSAPP */}
       <a 
-        href="https://wa.me/234806861306?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited"
+        href="https://wa.me/2348068613046?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited"
         target="_blank"
         style={{
           position: 'fixed',
@@ -148,6 +148,51 @@ export default function HomePage() {
       >
         WhatsApp Us
       </a>
+
+      {/* FOOTER WITH 6 SERVICES */}
+      <footer style={{background: '#0a1128', color: '#94a3b8', padding: '40px 20px', borderTop: '1px solid #1e293b', marginTop: '60px'}}>
+        <div style={{maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px'}}>
+          
+          {/* COMPANY INFO */}
+          <div>
+            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>DEEP INTEGRATED LAB SERVICES LIMITED</h3>
+            <p style={{fontSize: '14px'}}>
+              Supplying laboratory chemicals, laboratory equipment, and precision measurement 
+              instrumentation to industrial, oil & gas, and research laboratories in Rivers State and beyond.
+            </p>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>Contact</h3>
+            <p style={{fontSize: '14px', margin: '8px 0'}}>info@deepintegratedlab.com</p>
+            <p style={{fontSize: '14px', margin: '8px 0'}}>+234 806 861 3046</p>
+            <p style={{fontSize: '14px', margin: '8px 0'}}>46 New Jerusalem, Eliozu, Port Harcourt, Rivers State</p>
+          </div>
+
+          {/* NAVIGATE + 6 SERVICES */}
+          <div>
+            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>Navigate</h3>
+            <a href="#" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Home</a>
+            <a href="#services" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Services</a>
+            <a href="#contact" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Contact</a>
+            
+            <h4 style={{color: '#f59e0b', marginTop: '20px', marginBottom: '10px', fontSize: '15px'}}>Our 6 Key Services</h4>
+            <a href="#lab-tech" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>1. Laboratory Technical Services</a>
+            <a href="#analytical" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>2. Analytical Lab Services</a>
+            <a href="#environmental" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>3. Environmental Services</a>
+            <a href="#chemical-supply" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>4. Chemical Supply</a>
+            <a href="#production-chem" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>5. Production Chemistry</a>
+            <a href="#injection" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>6. Chemical Injection & Optimization</a>
+          </div>
+
+        </div>
+
+        <div style={{textAlign: 'center', marginTop: '30px', paddingTop: '20px', borderTop: '1px solid #1e293b', fontSize: '14px'}}>
+          © 2026 Deep Integrated Lab Services Limited. All rights reserved.
+        </div>
+      </footer>
+
     </main>
   )
 }
