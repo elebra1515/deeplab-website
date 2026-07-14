@@ -1,198 +1,107 @@
-export default function HomePage() {
+"use client";
+import { useState, useEffect } from 'react';
+
+export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const services = [
+    {
+      title: 'Laboratory Technical Services',
+      img: 'https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=1200',
+      desc: 'Comprehensive chemical analysis, quality control, and laboratory testing services for oil & gas products to ensure industry standards and regulatory compliance.'
+    },
+    {
+      title: 'Environmental Laboratory Services', 
+      img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200',
+      desc: 'Professional water, air, and soil testing for environmental compliance, impact assessment, and meeting all regulatory requirements.'
+    },
+    {
+      title: 'Oil & Gas Production Support',
+      img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200', 
+      desc: 'On-site technical support, production optimization, and field laboratory services for upstream and downstream oil & gas operations.'
+    },
+    {
+      title: 'Engineering & Maintenance',
+      img: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=1200',
+      desc: 'Expert equipment calibration, preventive maintenance, and engineering solutions for laboratories and industrial facilities.'
+    },
+    {
+      title: 'Training & Consultancy',
+      img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200',
+      desc: 'Professional technical training for laboratory personnel and expert consultancy on best practices, safety, and quality management.'
+    },
+    {
+      title: 'Supply of Lab Chemicals & Equipment',
+      img: 'https://images.unsplash.com/photo-1615484477778-ff7ea6b3f9bf?w=1200',
+      desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
+    }
+  ];
+
   return (
-    <main style={{padding: '40px 20px', background: '#0a1128', color: '#e2e8f0', minHeight: '100vh', fontFamily: 'Arial, sans-serif', lineHeight: '1.8'}}>
+    <main style={{background: '#0a0a0a', color: '#e5e5e5', fontFamily: 'system-ui, -apple-system, sans-serif'}}>
       
-      {/* HEADER */}
-      <header style={{textAlign: 'center', marginBottom: '50px', borderBottom: '2px solid #f59e0b', paddingBottom: '20px'}}>
-        <h1 style={{fontSize: '38px', color: '#f59e0b', marginBottom: '10px'}}>DEEP INTEGRATED LAB SERVICES LIMITED</h1>
-        <p style={{fontSize: '20px', color: '#94a3b8', fontStyle: 'italic'}}>"Precision, supplied."</p>
-        <p><b>Industry:</b> Energy, Petrochemical, & Technical Engineering Services</p>
-        <p><b>Core Mandate:</b> Transforming high-tier laboratory insights and specialized chemistry into operational efficiency and asset integrity.</p>
-        <p>Port Harcourt, Rivers State, Nigeria</p>
+      {/* STICKY HEADER */}
+      <header style={{
+        position: 'sticky', top: 0, zIndex: 50, 
+        background: scrolled ? 'rgba(10,10,10,0.95)' : 'rgba(10,10,10,0.8)',
+        backdropFilter: 'blur(10px)',
+        padding: '20px 40px', transition: 'all 0.3s ease', 
+        borderBottom: '1px solid #222'
+      }}>
+        <h1 style={{color: '#f59e0b', margin: 0, fontSize: '1.3rem', fontWeight: '700'}}>DEEP INTEGRATED LAB SERVICES LIMITED</h1>
       </header>
 
-      {/* EXECUTIVE SUMMARY */}
-      <section style={{marginBottom: '40px', background: '#111827', padding: '25px', borderRadius: '10px'}}>
-        <h2 style={{color: '#f59e0b', borderBottom: '1px solid #334155', paddingBottom: '10px'}}>1. Executive Summary</h2>
-        <p>
-          Deep Integrated Lab Services Limited is a premier technical services provider dedicated to serving the 
-          upstream, midstream, and downstream sectors of the oil and gas industry. Built on a foundation of 
-          scientific excellence and rigorous quality control, we bridge the gap between complex chemistry and asset performance.
-        </p>
-        <p>
-          Our comprehensive service portfolio spans high-precision analytical diagnostics, robust environmental compliance management, 
-          high-performance chemical supply, and real-time process optimization. By providing highly reliable, validated data and 
-          customized chemical engineering solutions, we empower operators to protect valuable infrastructure, maintain regulatory 
-          compliance, reduce operational expenditure (OPEX), and maximize production yields.
-        </p>
+      {/* HERO BANNER - LAB SETTINGS */}
+      <section style={{position: 'relative', height: '600px', overflow: 'hidden'}}>
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600" 
+          alt="Modern Laboratory"
+          style={{width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65}}
+        />
+        <div style={{
+          position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
+          textAlign: 'center', padding: '20px', width: '90%', maxWidth: '900px'
+        }}>
+          <h1 style={{fontSize: '3.2rem', color: '#f59e0b', marginBottom: '15px', lineHeight: '1.2', fontWeight: '800'}}>Laboratory, Production & Engineering Services</h1>
+          <p style={{fontSize: '1.4rem', marginBottom: '35px', color: '#fff', fontWeight: '300'}}>Precision. Safety. Excellence in Oil & Gas Laboratory Solutions</p>
+          <a href="https://wa.me/234800000" target="_blank" rel="noopener noreferrer" style={{
+            background: '#25D366', padding: '16px 32px', borderRadius: '10px', 
+            color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem',
+            display: 'inline-block'
+          }}>Chat on WhatsApp</a>
+        </div>
       </section>
 
-      {/* VISION MISSION VALUES */}
-      <section style={{marginBottom: '40px'}}>
-        <h2 style={{color: '#f59e0b', borderBottom: '1px solid #334155', paddingBottom: '10px'}}>2. Vision, Mission & Core Values</h2>
-        <p><b>Our Vision:</b> To be the energy sector's most trusted partner in technical and laboratory integration, recognized globally for driving process optimization, asset longevity, and environmental sustainability.</p>
-        <p><b>Our Mission:</b> To deliver exceptionally accurate, timely, and compliant laboratory and chemical solutions. We achieve this by combining advanced automation with a world-class team of analysts, chemists, and production engineers to provide data-driven operational confidence.</p>
-        <p><b>Core Values:</b></p>
-        <ul>
-          <li><b>Data Integrity:</b> Absolute precision in every test; our data forms the baseline for high-stakes operational engineering decisions.</li>
-          <li><b>Safety & Compliance:</b> Operating with zero compromise on Health, Safety, and Environment (HSE) standards, ensuring complete adherence to international protocols (ASTM, API, ISO).</li>
-          <li><b>Operational Synergy:</b> Blending laboratory analysis directly with field applications to optimize chemical efficiency and performance.</li>
-        </ul>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" style={{marginBottom: '40px'}}>
-        <h2 style={{color: '#f59e0b', borderBottom: '1px solid #334155', paddingBottom: '10px'}}>3. Core Technical Services</h2>
-        <p>Deep Integrated Lab Services Limited delivers its expertise through six distinct, yet highly integrated service pillars:</p>
+      {/* 6 SERVICES WITH IMAGES */}
+      <section style={{padding: '100px 20px', maxWidth: '1200px', margin: '0 auto'}}>
+        <h2 style={{textAlign: 'center', fontSize: '2.8rem', marginBottom: '70px', color: '#f59e0b', fontWeight: '700'}}>Our Core Services</h2>
         
-        <div id="lab-tech" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>1. Laboratory Technical Services</h3>
-          <p>We provide foundational technical support, management, and engineering to establish and maintain world-class testing environments.</p>
-          <ul>
-            <li><b>Turnkey Lab Setups:</b> Design, sourcing, commissioning, and validation of stationary and mobile containerized field laboratories for remote wellheads or offshore platforms.</li>
-            <li><b>Equipment Calibration & Maintenance:</b> Preventative maintenance and calibration of high-end lab instrumentation to ensure alignment with international standards.</li>
-            <li><b>LIMS Implementation:</b> Deploying advanced Laboratory Information Management Systems (LIMS) for seamless, secure data tracking and automated Certificate of Analysis (CoA) generation.</li>
-          </ul>
-        </div>
-
-        <div id="analytical" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>2. Analytical Lab Services</h3>
-          <p>Delivering the high-precision baseline data required for custody transfer, asset valuation, and day-to-day operations.</p>
-          <ul>
-            <li><b>Crude Oil & Gas Assays:</b> Comprehensive analysis of density, viscosity, sulfur content, pour point, heavy metals, and vapor pressure (RVP).</li>
-            <li><b>Fuel & Refined Product Testing:</b> Quality control testing for finished petroleum products (gasoline, diesel, jet fuel, marine fuels, and lubricants) against international commercial specifications.</li>
-            <li><b>Compositional Analysis:</b> High-resolution gas chromatography (GC) to characterize natural gas streams, natural gas liquids (NGLs), and fiscal custody transfers.</li>
-          </ul>
-        </div>
-
-        <div id="environmental" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>3. Environmental Services</h3>
-          <p>Helping operators manage their ecological footprint and maintain complete compliance with local and international regulatory frameworks.</p>
-          <ul>
-            <li><b>Effluent & Produced Water Monitoring:</b> Regular testing of discharge streams for oil-in-water (OIW) levels, Total Dissolved Solids (TDS), heavy metals, and toxicity.</li>
-            <li><b>Waste Characterization:</b> Analysis of drilling muds, cuttings, and hazardous oilfield waste prior to treatment or disposal.</li>
-            <li><b>Air Quality & Emissions Tracking:</b> Ambient air quality mapping, stack emissions testing, and fugitive methane detection around flow stations and refineries.</li>
-          </ul>
-        </div>
-
-        <div id="chemical-supply" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>4. Chemical Supply</h3>
-          <p>A highly reliable, end-to-end supply chain delivering high-performance, industry-certified specialty chemicals.</p>
-          <ul>
-            <li><b>Upstream Production Chemicals:</b> Comprehensive stock of high-grade demulsifiers, corrosion inhibitors, scale inhibitors, biocides, and pour-point depressants.</li>
-            <li><b>Drilling & Completion Fluids:</b> Supply of premium polymers, bentonite, weighting agents, and customized drilling fluid chemical additives.</li>
-            <li><b>Downstream Process Chemicals:</b> Refined product additives, fuel stabilizers, and water treatment chemicals for refining operations.</li>
-          </ul>
-        </div>
-
-        <div id="production-chem" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>5. Production Chemistry</h3>
-          <p>Deep analytical evaluation of reservoir fluids to diagnose, predict, and mitigate organic and inorganic deposition challenges.</p>
-          <ul>
-            <li><b>Flow Assurance Analysis:</b> Laboratory tracking and fingerprinting of wax, asphaltenes, gas hydrates, and scale deposition risks that cause pipeline blockages.</li>
-            <li><b>Corrosion Fluid Dynamics:</b> Chemical profiling of fluids to detect and combat internal pipeline corrosion, microbially influenced corrosion (MIC), and hydrogen sulfide (H₂S) souring.</li>
-            <li><b>Fluid Compatibility Testing:</b> Evaluation of commingled fluid streams to prevent adverse chemical reactions during field integration or production blending.</li>
-          </ul>
-        </div>
-
-        <div id="injection" style={{marginBottom: '25px', background: '#111827', padding: '20px', borderRadius: '8px'}}>
-          <h3 style={{color: '#f59e0b'}}>6. Chemical Injection & Optimization</h3>
-          <p>Transforming laboratory analysis into fieldwork by designing, auditing, and adjusting chemical delivery systems to maximize efficiency and minimize cost.</p>
-          <ul>
-            <li><b>Dosing Rate Optimization:</b> Laboratory bottle-testing and loop testing to determine the exact minimum effective concentration (MEC) required, eliminating chemical over-injection.</li>
-            <li><b>Injection System Audits:</b> Inspecting and calibrating chemical injection pumps, nozzles, and skids to ensure uniform distribution across processing streams.</li>
-            <li><b>Real-Time Data Integration:</b> Pairing analytical laboratory trends with automated dosing adjustments to proactively counter shifting reservoir chemistry.</li>
-          </ul>
-        </div>
+        {services.map((service, i) => (
+          <div key={i} style={{
+            background: '#111827', borderRadius: '14px', 
+            marginBottom: '50px', overflow: 'hidden',
+            boxShadow: '0 8px 30px rgba(245,158,11,0.08)'
+          }}>
+            <img src={service.img} alt={service.title} style={{width: '100%', height: '350px', objectFit: 'cover'}}/>
+            <div style={{padding: '35px'}}>
+              <h3 style={{color: '#f59e0b', fontSize: '1.8rem', marginBottom: '15px', fontWeight: '700'}}>{service.title}</h3>
+              <p style={{fontSize: '1.15rem', lineHeight: '1.8', color: '#d1d5db'}}>{service.desc}</p>
+            </div>
+          </div>
+        ))}
       </section>
 
-      {/* DATA SECTION */}
-      <section style={{marginBottom: '40px', background: '#111827', padding: '25px', borderRadius: '10px'}}>
-        <h2 style={{color: '#f59e0b', borderBottom: '1px solid #334155', paddingBottom: '10px'}}>4. Delivery of Quality Data for Process Optimization</h2>
-        <p>
-          At Deep Integrated Lab Services Limited, data is an active operational asset. We provide highly reliable, validated data 
-          that drives decision-making, reduces downtime, and ensures your operations run at peak efficiency.
-        </p>
-      </section>
-
-      {/* CTA */}
-      <section id="contact" style={{textAlign: 'center', marginTop: '50px', padding: '30px', background: '#111827', borderRadius: '10px'}}>
-        <h2 style={{color: '#f59e0b'}}>Ready to Optimize Your Operations?</h2>
-        <p>Contact us today for laboratory solutions, chemical supply, and process optimization.</p>
-        <a 
-          href="https://wa.me/2348068613046?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited%2C%20I%20want%20to%20make%20an%20enquiry" 
-          target="_blank"
-          style={{background: '#25D366', color: 'white', padding: '15px 30px', textDecoration: 'none', borderRadius: '8px', fontWeight: 'bold', fontSize: '18px', display: 'inline-block', marginTop: '10px'}}
-        >
-          Chat on WhatsApp
-        </a>
-      </section>
-
-      {/* FLOATING WHATSAPP */}
-      <a 
-        href="https://wa.me/2348068613046?text=Hello%20Deep%20Integrated%20Lab%20Services%20Limited"
-        target="_blank"
-        style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          background: '#25D366',
-          color: 'white',
-          padding: '15px 20px',
-          borderRadius: '50px',
-          textDecoration: 'none',
-          fontWeight: 'bold',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-          zIndex: 999
-        }}
-      >
-        WhatsApp Us
-      </a>
-
-      {/* FOOTER WITH 6 SERVICES */}
-      <footer style={{background: '#0a1128', color: '#94a3b8', padding: '40px 20px', borderTop: '1px solid #1e293b', marginTop: '60px'}}>
-        <div style={{maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px'}}>
-          
-          {/* COMPANY INFO */}
-          <div>
-            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>DEEP INTEGRATED LAB SERVICES LIMITED</h3>
-            <p style={{fontSize: '14px'}}>
-              Supplying laboratory chemicals, laboratory equipment, and precision measurement 
-              instrumentation to industrial, oil & gas, and research laboratories in Rivers State and beyond.
-            </p>
-          </div>
-
-          {/* CONTACT */}
-          <div>
-            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>Contact</h3>
-            <p style={{fontSize: '14px', margin: '8px 0'}}>info@deepintegratedlab.com</p>
-            <p style={{fontSize: '14px', margin: '8px 0'}}>+234 806 861 3046</p>
-            <p style={{fontSize: '14px', margin: '8px 0'}}>46 New Jerusalem, Eliozu, Port Harcourt, Rivers State</p>
-          </div>
-
-          {/* NAVIGATE + 6 SERVICES */}
-          <div>
-            <h3 style={{color: '#f59e0b', marginBottom: '15px'}}>Navigate</h3>
-            <a href="#" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Home</a>
-            <a href="#services" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Services</a>
-            <a href="#contact" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '8px 0'}}>Contact</a>
-            
-            <h4 style={{color: '#f59e0b', marginTop: '20px', marginBottom: '10px', fontSize: '15px'}}>Our 6 Key Services</h4>
-            <a href="#lab-tech" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>1. Laboratory Technical Services</a>
-            <a href="#analytical" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>2. Analytical Lab Services</a>
-            <a href="#environmental" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>3. Environmental Services</a>
-            <a href="#chemical-supply" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>4. Chemical Supply</a>
-            <a href="#production-chem" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>5. Production Chemistry</a>
-            <a href="#injection" style={{display: 'block', color: '#94a3b8', textDecoration: 'none', margin: '6px 0', fontSize: '14px'}}>6. Chemical Injection & Optimization</a>
-          </div>
-
-        </div>
-
-        <div style={{textAlign: 'center', marginTop: '30px', paddingTop: '20px', borderTop: '1px solid #1e293b', fontSize: '14px'}}>
-          © 2026 Deep Integrated Lab Services Limited. All rights reserved.
-        </div>
+      {/* CLEAN FOOTER */}
+      <footer style={{padding: '50px 40px', textAlign: 'center', borderTop: '1px solid #222', background: '#111827'}}>
+        <p style={{color: '#9ca3af', fontSize: '1rem'}}>© 2026 DEEP INTEGRATED LAB SERVICES LIMITED. All Rights Reserved.</p>
+        <p style={{color: '#666', fontSize: '0.9rem', marginTop: '10px'}}>Abuja, Nigeria</p>
       </footer>
-
     </main>
-  )
+  );
 }
