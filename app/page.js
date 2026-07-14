@@ -70,7 +70,7 @@ export default function Home() {
         }}>
           <h1 style={{fontSize: '3.2rem', color: '#f59e0b', marginBottom: '15px', lineHeight: '1.2', fontWeight: '800'}}>Laboratory, Production & Engineering Services</h1>
           <p style={{fontSize: '1.4rem', marginBottom: '35px', color: '#fff', fontWeight: '300'}}>Precision. Safety. Excellence in Oil & Gas Laboratory Solutions</p>
-          <a href="https://wa.me/234800000" target="_blank" rel="noopener noreferrer" style={{
+          <a href="https://wa.me/234868613046" target="_blank" rel="noopener noreferrer" style={{
             background: '#25D366', padding: '16px 32px', borderRadius: '10px', 
             color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem',
             display: 'inline-block'
