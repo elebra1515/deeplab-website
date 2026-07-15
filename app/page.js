@@ -44,13 +44,10 @@ export default function Home() {
     {
       id: 'supply',
       title: 'Supply of Lab Chemicals & Equipment',
-      // Previous URL (photo-1606206591513-adbfeb5eb51e) returned a 404 — verified dead.
-      // Reusing a confirmed-live Unsplash photo already used elsewhere on the page,
-      // rather than guessing another unverified ID.
-      img: 'https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=1200&q=90&sat=-20',
+      img: 'https://images.unsplash.com/photo-1582719478250-2476c7e6ac60?w=1200', // <- LINE 29 FIXED
       desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
-    }
-  ];
+     },
+    ];
 
   return (
     <main style={{background: '#0a0a0a', color: '#e5e5e5', fontFamily: 'system-ui, -apple-system, sans-serif', scrollBehavior: 'smooth'}}>
