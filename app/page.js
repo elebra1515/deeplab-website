@@ -45,7 +45,7 @@ export default function Home() {
     {
       id: 'supply',
       title: 'Supply of Lab Chemicals & Equipment',
-      img: '/images/chemicals.jpg', // FIXED: WAS PEXELS LINK. NOW USES YOUR LOCAL IMAGE TOO',
+      img: 'https://images.pexels.com/photos/3825529/pexels-photo-3825529.jpeg',
       desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
     },
   ];
