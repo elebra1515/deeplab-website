@@ -44,7 +44,7 @@ export default function Home() {
     {
       id: 'supply',
       title: 'Supply of Lab Chemicals & Equipment',
-      img: 'https://images.unsplash.com/photo-1628348070887-1d0ccda0e4b6?w=1200',
+      img: 'https://images.unsplash.com/photo-1606206591513-adbfeb5eb51e?w=1200',
       desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
     }
   ];
@@ -100,7 +100,12 @@ export default function Home() {
             marginBottom: '50px', overflow: 'hidden',
             boxShadow: '0 8px 30px rgba(245,158,11,0.08)'
           }}>
-            <img src={service.img} alt={service.title} style={{width: '100%', height: '350px', objectFit: 'cover'}}/>
+            <img 
+              src={service.img} 
+              alt={service.title} 
+              style={{width: '100%', height: '350px', objectFit: 'cover'}}
+              onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1587613864411-fa8b0c0e5c68?w=1200'; }}
+            />
             <div style={{padding: '35px'}}>
               <h3 style={{color: '#f59e0b', fontSize: '1.8rem', marginBottom: '15px', fontWeight: '700'}}>{service.title}</h3>
               <p style={{fontSize: '1.15rem', lineHeight: '1.8', color: '#d1d5db'}}>{service.desc}</p>
