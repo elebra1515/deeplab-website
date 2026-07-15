@@ -44,7 +44,7 @@ export default function Home() {
     {
       id: 'supply',
       title: 'Supply of Lab Chemicals & Equipment',
-      img: 'https://images.unsplash.com/photo-1582719478250-2476c7e6ac60?w=1200', // <- LINE 29 FIXED
+      img: 'https://images.unsplash.com/photo-1582719478250-2476c7e6ac60?w=1200',
       desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
      },
     ];
