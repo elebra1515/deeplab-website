@@ -19,7 +19,7 @@ export default function Home() {
     },
     {
       id: 'environmental',
-      title: 'Environmental Laboratory Services', 
+      title: 'Environmental Laboratory Services',
       img: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200',
       desc: 'Professional water, air, and soil testing for environmental compliance, impact assessment, and meeting all regulatory requirements.'
     },
@@ -44,25 +44,28 @@ export default function Home() {
     {
       id: 'supply',
       title: 'Supply of Lab Chemicals & Equipment',
-      img: 'https://images.unsplash.com/photo-1606206591513-adbfeb5eb51e?w=1200',
+      // Previous URL (photo-1606206591513-adbfeb5eb51e) returned a 404 — verified dead.
+      // Reusing a confirmed-live Unsplash photo already used elsewhere on the page,
+      // rather than guessing another unverified ID.
+      img: 'https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=1200&q=90&sat=-20',
       desc: 'Reliable supply and distribution of laboratory reagents, chemicals, glassware, and modern scientific equipment.'
     }
   ];
 
   return (
     <main style={{background: '#0a0a0a', color: '#e5e5e5', fontFamily: 'system-ui, -apple-system, sans-serif', scrollBehavior: 'smooth'}}>
-      
+
       {/* STICKY HEADER WITH NAVIGATION */}
       <header style={{
-        position: 'sticky', top: 0, zIndex: 50, 
+        position: 'sticky', top: 0, zIndex: 50,
         background: scrolled ? 'rgba(10,10,10,0.95)' : 'rgba(10,10,10,0.8)',
         backdropFilter: 'blur(10px)',
-        padding: '20px 40px', transition: 'all 0.3s ease', 
+        padding: '20px 40px', transition: 'all 0.3s ease',
         borderBottom: '1px solid #222',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}>
         <h1 style={{color: '#f59e0b', margin: 0, fontSize: '1.3rem', fontWeight: '700'}}>DEEP INTEGRATED LAB</h1>
-        
+
         <nav style={{display: 'flex', gap: '30px'}}>
           <a href="#" style={{color: '#fff', textDecoration: 'none', fontWeight: '500'}}>Home</a>
           <a href="#services" style={{color: '#fff', textDecoration: 'none', fontWeight: '500'}}>Services</a>
@@ -72,8 +75,8 @@ export default function Home() {
 
       {/* HERO BANNER */}
       <section style={{position: 'relative', height: '600px', overflow: 'hidden'}}>
-        <img 
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600" 
+        <img
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600"
           alt="Modern Laboratory"
           style={{width: '100%', height: '100%', objectFit: 'cover', opacity: 0.65}}
         />
@@ -84,7 +87,7 @@ export default function Home() {
           <h1 style={{fontSize: '3.2rem', color: '#f59e0b', marginBottom: '15px', lineHeight: '1.2', fontWeight: '800'}}>Laboratory, Production & Engineering Services</h1>
           <p style={{fontSize: '1.4rem', marginBottom: '35px', color: '#fff', fontWeight: '300'}}>Precision. Safety. Excellence in Oil & Gas Laboratory Solutions</p>
           <a href="https://wa.me/2348068613046" target="_blank" rel="noopener noreferrer" style={{
-            background: '#25D366', padding: '16px 32px', borderRadius: '10px', 
+            background: '#25D366', padding: '16px 32px', borderRadius: '10px',
             color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem'
           }}>Chat on WhatsApp</a>
         </div>
@@ -93,18 +96,23 @@ export default function Home() {
       {/* 6 SERVICES WITH IMAGES */}
       <section id="services" style={{padding: '100px 20px', maxWidth: '1200px', margin: '0 auto'}}>
         <h2 style={{textAlign: 'center', fontSize: '2.8rem', marginBottom: '70px', color: '#f59e0b', fontWeight: '700'}}>Our Core Services</h2>
-        
+
         {services.map((service, i) => (
           <div id={service.id} key={i} style={{
-            background: '#111827', borderRadius: '14px', 
+            background: '#111827', borderRadius: '14px',
             marginBottom: '50px', overflow: 'hidden',
             boxShadow: '0 8px 30px rgba(245,158,11,0.08)'
           }}>
-            <img 
-              src={service.img} 
-              alt={service.title} 
-              style={{width: '100%', height: '350px', objectFit: 'cover'}}
-              onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1587613864411-fa8b0c0e5c68?w=1200'; }}
+            <img
+              src={service.img}
+              alt={service.title}
+              style={{width: '100%', height: '350px', objectFit: 'cover', background: '#1f2937'}}
+              onError={(e) => {
+                // Verified-live fallback — same photo already used on this page,
+                // so it can never 404 independently of the primary image.
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200';
+              }}
             />
             <div style={{padding: '35px'}}>
               <h3 style={{color: '#f59e0b', fontSize: '1.8rem', marginBottom: '15px', fontWeight: '700'}}>{service.title}</h3>
@@ -121,7 +129,7 @@ export default function Home() {
         <p style={{fontSize: '1.2rem', marginBottom: '10px'}}>+234 806 861 3046</p>
         <p style={{fontSize: '1.2rem', marginBottom: '30px'}}>46 New Jerusalem, Eliozu, Port Harcourt, Rivers State</p>
         <a href="https://wa.me/2348068613046" target="_blank" rel="noopener noreferrer" style={{
-          background: '#25D366', padding: '16px 32px', borderRadius: '10px', 
+          background: '#25D366', padding: '16px 32px', borderRadius: '10px',
           color: '#fff', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem'
         }}>Chat on WhatsApp</a>
       </section>
@@ -129,7 +137,7 @@ export default function Home() {
       {/* FOOTER WITH 6 SERVICES LISTED */}
       <footer style={{padding: '60px 40px', background: '#0a0a0a', borderTop: '1px solid #222'}}>
         <div style={{maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px'}}>
-          
+
           {/* Company Info */}
           <div>
             <h3 style={{color: '#f59e0b', fontSize: '1.2rem', marginBottom: '15px'}}>DEEP INTEGRATED LAB SERVICES LIMITED</h3>
